@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars API</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>CARS API</h1>
+    <h3>Domain: "kjhgfghjkjhgfdtyuio"</h3>
+    <h2>USERS</h2>
+    <table>
+        <tr>
+            <th>URL</th>
+            <th>Method</th>
+            <th>Body</th>
+            <th>Description</th>
+            <th>Authentication</th>
+        </tr>
+        <tr>
+            <td>/users/myinfo</td>
+            <td>GET</td>
+            <td>None</td>
+            <td>Returns the user information according to the sent token</td>
+            <td>A valid token</td>
+        </tr>
+        <tr>
+            <td>/users/userslist</td>
+            <td>GET</td>
+            <td>None</td>
+            <td>Returns the list of all users</td>
+            <td>A valid administrator token</td>
+        </tr>
+        <tr>
+            <td>/users</td>
+            <td>POST</td>
+            <td>{<br>
+                "name":"user",<br>
+                "email":"user@gmail.com",<br>
+                "password":"1234"<br>
+            }</td>
+            <td>Creates a new user</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>/users/login</td>
+            <td>POST</td>
+            <td>{<br>
+                "email":"user@gmail.com",<br>
+                "password":"1234"<br>
+            }</td>
+            <td>If the user information is correct, a token is returned</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>/users/user_id</td>
+            <td>PUT</td>
+            <td>{<br>
+                "name":"user",<br>
+                "email":"user@gmail.com",<br>
+                "password":"1234"<br>
+            }</td>
+            <td>Updates the user data according to the ID</td>
+            <td>A valid token of an administrator or of the user whose details are updated</td>
+        </tr>
+        <tr>
+            <td>/users/user_id</td>
+            <td>DELETE</td>
+            <td>None</td>
+            <td>Deleted the user data according to the ID</td>
+            <td>A valid token of an administrator or of the user whose details are deleted</td>
+        </tr>
+    </table>
+    <h2>CARS</h2>
+    <table>
+        <tr>
+            <th>URL</th>
+            <th>Method</th>
+            <th>Body</th>
+            <th>Description</th>
+            <th>Authentication</th>
+        </tr>
+        <tr>
+            <td>/cars</td>
+            <td>GET</td>
+            <td>None</td>
+            <td>Returns all vehicles</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>/cars/search/s=value_to_serach</td>
+            <td>GET</td>
+            <td>None</td>
+            <td>Returns all vehicles whose name or information about them contains the search value</td>
+            <td>None</td>
+
+        </tr>
+        <tr>
+            <td>/cars/category/category_name</td>
+            <td>GET</td>
+            <td>None</td>
+            <td>Returns all vehicles in the requested category</td>
+            <td>None</td>
+
+        </tr>
+        <tr>
+            <td>/cars/price?min=min_price&max=max_price</td>
+            <td>GET</td>
+            <td>None</td>
+            <td>Returns all vehicles in the requested price range</td>
+            <td>None</td>
+
+        </tr>
+        <tr>
+            <td>/cars/vehicle_id</td>
+            <td>GET</td>
+            <td>None</td>
+            <td>Returns the vehicle with the requested ID</td>
+            <td>none</td>
+
+        </tr>
+        <tr>
+            <td>/cars</td>
+            <td>POST</td>
+            <td>{<br>
+                "name": "Toyota Camry",<br>
+                "info": "Midsize Sedan",<br>
+                "category": "Sedan",<br>
+                "img_url": "your-image-url.jpg",<br>
+                "price": 25000<br>
+              }</td>
+            <td>Creates a new vehicle</td>
+            <td>A valid token</td>
+        </tr>
+        <tr>
+            <td>/cars/vehicle_id</td>
+            <td>PUT</td>
+            <td>{<br>
+                "name": "Toyota Camry",<br>
+                "info": "Midsize Sedan",<br>
+                "category": "Sedan",<br>
+                "img_url": "your-image-url.jpg",<br>
+                "price": 25000<br>
+              }</td>
+            <td>Updates the vehicle data according to the ID</td>
+            <td>A valid administrator or creator user token</td>
+        </tr>
+        <tr>
+            <td>/cars/vehicle_id</td>
+            <td>DELETE</td>
+            <td>None</td>
+            <td>Deletes the vehicle data according to the ID</td>
+            <td>A valid administrator or creator user token</td>
+        </tr>
+    </table>
+
+</body>
+</html>
