@@ -5,6 +5,7 @@ const router = express.Router();
 
 
 router.get("/", async (req, res) => {
+  return res.json("cars")
   let perPage = req.query.perPage || 10;
   let page = req.query.page || 1;
 
